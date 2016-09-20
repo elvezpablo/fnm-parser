@@ -26,37 +26,31 @@ module.exports = {
       position: 131,
       length: 15,
       label: 'Loan Amount',
-      process: (a) => {
-        return parseFloat(a);
-      },
+      process: a => parseFloat(a),
     },
     {
       position: 146,
       length: 7,
       label: 'Interest Rate',
-      process: (a) => {
-        return parseFloat(a);
-      },
+      process: a => parseFloat(a),
     },
     {
       position: 153,
       length: 3,
       label: 'No. of Months',
-      process: function (a) {
-        return parseInt(a);
-      },
+      process: a => parseFloat(a),
     },
     {
       position: 156,
       length: 2,
       label: 'Amortization Type',
-      process: function (a) {
+      process: (a) => {
         const l = {
           '01': 'Adjustable Rate',
           '04': 'GEM',
           '05': 'Fixed Rate',
           '06': 'GPM',
-          '13': 'Other',
+          13: 'Other',
         };
         if (a in l) {
           return l[a];
@@ -109,9 +103,7 @@ module.exports = {
       position: 4,
       length: 2,
       label: 'Applicant or Co-Applicant',
-      process: function (d) {
-        return (d && d == 'BW') ? 'Applicant' : 'Co-Applicant';
-      },
+      process: (d) => { return d && d === 'BW' ? 'Applicant' : 'Co-Applicant'; },
     },
     {
       position: 6,
@@ -157,7 +149,7 @@ module.exports = {
       position: 139,
       length: 1,
       label: 'Martial Status',
-      process: function (d) {
+      process: (d) => {
         const s = {
           M: 'Married',
           S: 'Separated',
@@ -184,7 +176,7 @@ module.exports = {
       position: 13,
       length: 2,
       label: 'Residency Type',
-      process: function (d) {
+      process: d => {
         const s = {
           F4: 'Former Residence',
           ZG: 'Present Residence',
@@ -239,9 +231,7 @@ module.exports = {
       position: 112,
       length: 2,
       label: 'Duration Years',
-      process: (d) => {
-        return (d) ? parseInt(d, 10) : '';
-      },
+      process: d => (d) ? parseInt(d, 10) : '',
     },
     {
       position: 114,
@@ -249,7 +239,7 @@ module.exports = {
       label: 'Duration Months',
       process: function (d) {
         if (d) {
-          d = parseInt(d);
+          d = parseInt(d, 10);
           if (d > 11 && d < 0) {
             d = '';
           }
