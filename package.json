@@ -1,0 +1,36 @@
+{
+  "name": "fnm-parser",
+  "version": "0.1.1",
+  "description": "FannyMae 3.2 Parser - parses the FNM Residential Loan Data file 1003 version 3.2 into JSON",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "linebyline": "0.0.8",
+    "lodash": "^3.8.0"
+  },
+  "_id": "fnm-parser@0.1.0",
+  "_shasum": "47ab43fedc118a7a53bfad2864385f7a19a433ce",
+  "_from": "fnm-parser@*",
+  "_npmVersion": "2.8.3",
+  "_nodeVersion": "0.12.1",
+  "_npmUser": {
+    "name": "theplatcal",
+    "email": "prangel@gmail.com"
+  },
+  "dist": {
+    "shasum": "47ab43fedc118a7a53bfad2864385f7a19a433ce",
+    "tarball": "http://registry.npmjs.org/fnm-parser/-/fnm-parser-0.1.0.tgz"
+  },
+  "maintainers": [
+    {
+      "name": "theplatcal",
+      "email": "prangel@gmail.com"
+    }
+  ],
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/fnm-parser/-/fnm-parser-0.1.0.tgz"
+}
