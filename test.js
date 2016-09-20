@@ -1,4 +1,4 @@
-var fnm_rld = require("./index");
+let fnm_rld = require("./index");
 
 
 fnm_rld('./data/POINT.FNM').on("done", function(d) {

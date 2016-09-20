@@ -31,6 +31,18 @@
       "email": "prangel@gmail.com"
     }
   ],
+  "eslintConfig": {
+    "extends": "airbnb"
+  },
   "directories": {},
-  "_resolved": "https://registry.npmjs.org/fnm-parser/-/fnm-parser-0.1.0.tgz"
+  "_resolved": "https://registry.npmjs.org/fnm-parser/-/fnm-parser-0.1.0.tgz",
+  "devDependencies": {
+    "babel-eslint": "^6.1.2",
+    "eslint": "^3.5.0",
+    "eslint-config-airbnb": "^11.1.0",
+    "eslint-config-airbnb-es5": "^1.0.9",
+    "eslint-plugin-import": "^1.15.0",
+    "eslint-plugin-jsx-a11y": "^2.2.2",
+    "eslint-plugin-react": "^6.3.0"
+  }
 }
