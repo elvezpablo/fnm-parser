@@ -14,6 +14,7 @@ var makeLineParser = function(line) {
       getData : function(position, length, process) {
          var d = line.split("").splice(position-1, length).join("").trim();
          return (process) ? process(d) : d;
+
       }
    }
 };
@@ -38,26 +39,30 @@ var fnm_rld = module.exports = function(file, opts) {
        data = {},
        self = this;
 
-   var addSection = function(section) {
-      data[section] = [];
-      return data[section];
-   };
    var fnm_file = linebyline(file);
    fnm_file.on('line', function(line) {
       parser = makeLineParser(line);
       if(parser.getRecordID() in lookup) {
-         map = lookup[parser.getRecordID()];
-         var section = addSection(parser.getRecordID());
+         recordId = parser.getRecordID();
+         map = lookup[recordId];
+         var section = {};
          for(var i=0; i < map.length; i++) {
             item = map[i];
             item.data = parser.getData(item.position, item.length, item.process);
-            section.push(
-                {
-                   label : item.label,
-                   data : item.data
-                }
-            );
+            var entry={};
+            entry[item.label]=item.data;
+            section[item.label]=item.data
          }
+         if (! data[recordId]){
+            data[recordId]=section;
+         }
+         else {
+            tmp = data[recordId];
+            data[recordId]=[];
+            data[recordId].push(tmp);
+            data[recordId].push(section);
+         }
+         
       }
    }).on('error', function(err) {
       self.emit('error', err);
