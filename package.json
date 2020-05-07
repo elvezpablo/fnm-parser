@@ -4,13 +4,13 @@
   "description": "FannyMae 3.2 Parser - parses the FNM Residential Loan Data file 1003 version 3.2 into JSON",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./test.js"
   },
   "author": "Paul Rangel",
   "license": "ISC",
   "dependencies": {
     "linebyline": "1.3.0",
-    "lodash": "4.17.12"
+    "lodash": "4.17.15"
   },
   "_id": "fnm-parser@0.1.0",
   "_shasum": "47ab43fedc118a7a53bfad2864385f7a19a433ce",
